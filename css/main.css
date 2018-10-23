@@ -2054,7 +2054,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cd7aba;
+  background: #8c90ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2839,7 +2839,7 @@ hr {
   margin-top: 80px;
 }
 .header {
-  background: #rgba(37, 220, 250, 0.56);
+  background: #f5f5f5;
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -3143,10 +3143,4 @@ hr {
   background: #fff;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
-}
-* {
-  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"), auto !important;
-}
-:active {
-  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
 }
