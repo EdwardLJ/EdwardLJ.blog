@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="盆友," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,20 +81,19 @@
 
 
 
-<meta name="description" content="那个男人很不真实">
-<meta name="keywords" content="盆友">
+<meta name="description" content="Socket通讯TCP三次握手1.客户端发送请求报文a，发送信号为i2.服务端接收报文a,回应客户端发送确认信号i+1,重置发送信号j3.客户端收到确认报文，再次发送确认信号j+1，重置发送信号k。连接建立成功。 简单的Socket例子服务端1.创建IPAddress和IPEndpoint1234string host = &amp;quot;127.0.0.1&amp;quot;; //IPAddress.An">
 <meta property="og:type" content="article">
-<meta property="og:title" content="庐山行">
-<meta property="og:url" content="https://edwardlj.github.io/试试水/index.html">
+<meta property="og:title" content="Socket通讯">
+<meta property="og:url" content="https://edwardlj.github.io/Socket/index.html">
 <meta property="og:site_name" content="Edward.LJ">
-<meta property="og:description" content="那个男人很不真实">
+<meta property="og:description" content="Socket通讯TCP三次握手1.客户端发送请求报文a，发送信号为i2.服务端接收报文a,回应客户端发送确认信号i+1,重置发送信号j3.客户端收到确认报文，再次发送确认信号j+1，重置发送信号k。连接建立成功。 简单的Socket例子服务端1.创建IPAddress和IPEndpoint1234string host = &amp;quot;127.0.0.1&amp;quot;; //IPAddress.An">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://edwardlj.github.io/images/lushanxing.jpg">
-<meta property="og:updated_time" content="2018-07-13T09:33:23.091Z">
+<meta property="og:image" content="https://edwardlj.github.io/images/三次握手.png">
+<meta property="og:updated_time" content="2018-10-24T09:03:13.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="庐山行">
-<meta name="twitter:description" content="那个男人很不真实">
-<meta name="twitter:image" content="https://edwardlj.github.io/images/lushanxing.jpg">
+<meta name="twitter:title" content="Socket通讯">
+<meta name="twitter:description" content="Socket通讯TCP三次握手1.客户端发送请求报文a，发送信号为i2.服务端接收报文a,回应客户端发送确认信号i+1,重置发送信号j3.客户端收到确认报文，再次发送确认信号j+1，重置发送信号k。连接建立成功。 简单的Socket例子服务端1.创建IPAddress和IPEndpoint1234string host = &amp;quot;127.0.0.1&amp;quot;; //IPAddress.An">
+<meta name="twitter:image" content="https://edwardlj.github.io/images/三次握手.png">
 
 
 
@@ -124,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://edwardlj.github.io/试试水/"/>
+  <link rel="canonical" href="https://edwardlj.github.io/Socket/"/>
 
 
 
@@ -140,7 +139,7 @@
   </script>
 
 
-  <title>庐山行 | Edward.LJ</title>
+  <title>Socket通讯 | Edward.LJ</title>
   
 
 
@@ -295,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://edwardlj.github.io/试试水/">
+    <link itemprop="mainEntityOfPage" href="https://edwardlj.github.io/Socket/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Edward.LJ">
@@ -312,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">庐山行</h1>
+          <h1 class="post-title" itemprop="name headline">Socket通讯</h1>
         
 
         <div class="post-meta">
@@ -324,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-13T15:16:09+08:00">
-                2018-07-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T17:44:39+08:00">
+                2018-10-23
               </time>
             
 
@@ -343,8 +342,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/试试水/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/试试水/" itemprop="commentCount"></span>
+                <a href="/Socket/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Socket/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -371,7 +370,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  8
+                  440
                 </span>
               
 
@@ -387,7 +386,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -408,8 +407,16 @@
       
 
       
-        <h1 id="那个男人很不真实"><a href="#那个男人很不真实" class="headerlink" title="那个男人很不真实"></a>那个男人很不真实</h1><p><img src="/images/lushanxing.jpg" alt=""></p>
-
+        <h1 id="Socket通讯"><a href="#Socket通讯" class="headerlink" title="Socket通讯"></a>Socket通讯</h1><h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><p>1.客户端发送请求报文a，发送信号为i<br>2.服务端接收报文a,回应客户端发送确认信号i+1,重置发送信号j<br>3.客户端收到确认报文，再次发送确认信号j+1，重置发送信号k。连接建立成功。<br><img src="/images/三次握手.png" alt=""></p>
+<h2 id="简单的Socket例子"><a href="#简单的Socket例子" class="headerlink" title="简单的Socket例子"></a>简单的Socket例子</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><h4 id="1-创建IPAddress和IPEndpoint"><a href="#1-创建IPAddress和IPEndpoint" class="headerlink" title="1.创建IPAddress和IPEndpoint"></a>1.创建IPAddress和IPEndpoint</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string host = &quot;127.0.0.1&quot;; //IPAddress.Any</span><br><span class="line">int port = 8005;</span><br><span class="line">IPAddress ip = IPAddress.Parse(host);</span><br><span class="line">IPEndpoint ipe = new IPEndpoint(ip,port);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="2-创建Socket，打开监听"><a href="#2-创建Socket，打开监听" class="headerlink" title="2.创建Socket，打开监听"></a>2.创建Socket，打开监听</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//创建一个新的Socket,这里我们使用最常用的基于TCP的Stream Socket（流式套接字）</span><br><span class="line">Socket socket = new Socket(AddressFamuly.InterNetwork,SocketType.Stream,ProtocolType.TCP);</span><br><span class="line"></span><br><span class="line">//将该socket绑定到主机上面的某个端口</span><br><span class="line">socket.Blind(ipe);</span><br><span class="line"></span><br><span class="line">//启动监听，并且设置一个最大的队列长度(受理连接申请的最大值)</span><br><span class="line">socket.listen(10);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-接收报文"><a href="#3-接收报文" class="headerlink" title="3.接收报文"></a>3.接收报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Socket serverSocket = socket.Accept();</span><br><span class="line">byte[] recByte = new byte[1000];</span><br><span class="line">int length = serverSocket.Receive(recByte,recByte.Length,0);</span><br><span class="line">string resStr = Encoding.Unicode.GetString(recByte, 0, length);</span><br><span class="line">Console.WriteLine(recStr);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="4-发送报文"><a href="#4-发送报文" class="headerlink" title="4.发送报文"></a>4.发送报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string sendStr = &quot;Hello,clent&quot;;</span><br><span class="line">byte[] sendByte = Encoding.Unicode.GetBytes(sendStr);</span><br><span class="line">serverSocket.send(sendByte,sendByte.Length,0);</span><br><span class="line">serverSocket.close();</span><br><span class="line">socket.close();</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><h3 id="1-和服务端第一步一样，创建IPAddress和IPEndpoint"><a href="#1-和服务端第一步一样，创建IPAddress和IPEndpoint" class="headerlink" title="1.和服务端第一步一样，创建IPAddress和IPEndpoint"></a>1.和服务端第一步一样，创建IPAddress和IPEndpoint</h3><pre><code>……
+</code></pre><h4 id="2-创建clientSocket，连接serverSocket"><a href="#2-创建clientSocket，连接serverSocket" class="headerlink" title="2.创建clientSocket，连接serverSocket"></a>2.创建clientSocket，连接serverSocket</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//创建一个新的Socket,这里我们使用最常用的基于TCP的Stream Socket（流式套接字）</span><br><span class="line">Socket clientSocket = new Socket(AddressFamuly.InterNetwork,SocketType.Stream,ProtocolType.TCP);</span><br><span class="line"></span><br><span class="line">//将该socket连接到主机上面的某个端口</span><br><span class="line">clientSocket.Connect(ipe);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-发送报文"><a href="#3-发送报文" class="headerlink" title="3.发送报文"></a>3.发送报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string sendStr = &quot;Hello,server&quot;;</span><br><span class="line">byte[] sendByte = Encoding.Unicode.GetBytes(sendStr);</span><br><span class="line">clientSocket.send(sendByte,sendByte.Length,0);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="4-接收报文"><a href="#4-接收报文" class="headerlink" title="4.接收报文"></a>4.接收报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">byte[] recByte = new byte[1000];</span><br><span class="line">int length = clientSocket.Receive(recByte,recByte.Length,0);</span><br><span class="line">string resStr = Encoding.Unicode.GetString(recByte, 0, length);</span><br><span class="line">Console.WriteLine(recStr);</span><br><span class="line">clientSocket.Close();</span><br></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
     
@@ -458,12 +465,6 @@
 	
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/盆友/" rel="tag"><i class="fa fa-tag"></i> 盆友</a>
-          
-        </div>
-      
 
       
       
@@ -473,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/你好/" rel="next" title="练习哈Markdown语法">
-                <i class="fa fa-chevron-left"></i> 练习哈Markdown语法
+              <a href="/00.01/" rel="next" title="程序员如何准备面试中的算法">
+                <i class="fa fa-chevron-left"></i> 程序员如何准备面试中的算法
               </a>
             
           </div>
@@ -482,10 +483,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Joke/" rel="prev" title="Joke">
-                Joke <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -671,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#那个男人很不真实"><span class="nav-number">1.</span> <span class="nav-text">那个男人很不真实</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket通讯"><span class="nav-number">1.</span> <span class="nav-text">Socket通讯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP三次握手"><span class="nav-number">1.1.</span> <span class="nav-text">TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的Socket例子"><span class="nav-number">1.2.</span> <span class="nav-text">简单的Socket例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端"><span class="nav-number">1.2.1.</span> <span class="nav-text">服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建IPAddress和IPEndpoint"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.创建IPAddress和IPEndpoint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建Socket，打开监听"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.创建Socket，打开监听</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-接收报文"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">3.接收报文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-发送报文"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">4.发送报文</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端"><span class="nav-number">1.3.</span> <span class="nav-text">客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-和服务端第一步一样，创建IPAddress和IPEndpoint"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.和服务端第一步一样，创建IPAddress和IPEndpoint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建clientSocket，连接serverSocket"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">2.创建clientSocket，连接serverSocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-发送报文"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">3.发送报文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-接收报文"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">4.接收报文</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

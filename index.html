@@ -292,6 +292,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://edwardlj.github.io/Socket/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Edward.LJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Edward.LJ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Socket/" itemprop="url">Socket通讯</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-23T17:44:39+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Socket/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Socket/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  440
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Socket通讯"><a href="#Socket通讯" class="headerlink" title="Socket通讯"></a>Socket通讯</h1><h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><p>1.客户端发送请求报文a，发送信号为i<br>2.服务端接收报文a,回应客户端发送确认信号i+1,重置发送信号j<br>3.客户端收到确认报文，再次发送确认信号j+1，重置发送信号k。连接建立成功。<br><img src="/images/三次握手.png" alt=""></p>
+<h2 id="简单的Socket例子"><a href="#简单的Socket例子" class="headerlink" title="简单的Socket例子"></a>简单的Socket例子</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><h4 id="1-创建IPAddress和IPEndpoint"><a href="#1-创建IPAddress和IPEndpoint" class="headerlink" title="1.创建IPAddress和IPEndpoint"></a>1.创建IPAddress和IPEndpoint</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string host = &quot;127.0.0.1&quot;; //IPAddress.Any</span><br><span class="line">int port = 8005;</span><br><span class="line">IPAddress ip = IPAddress.Parse(host);</span><br><span class="line">IPEndpoint ipe = new IPEndpoint(ip,port);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="2-创建Socket，打开监听"><a href="#2-创建Socket，打开监听" class="headerlink" title="2.创建Socket，打开监听"></a>2.创建Socket，打开监听</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//创建一个新的Socket,这里我们使用最常用的基于TCP的Stream Socket（流式套接字）</span><br><span class="line">Socket socket = new Socket(AddressFamuly.InterNetwork,SocketType.Stream,ProtocolType.TCP);</span><br><span class="line"></span><br><span class="line">//将该socket绑定到主机上面的某个端口</span><br><span class="line">socket.Blind(ipe);</span><br><span class="line"></span><br><span class="line">//启动监听，并且设置一个最大的队列长度(受理连接申请的最大值)</span><br><span class="line">socket.listen(10);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-接收报文"><a href="#3-接收报文" class="headerlink" title="3.接收报文"></a>3.接收报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Socket serverSocket = socket.Accept();</span><br><span class="line">byte[] recByte = new byte[1000];</span><br><span class="line">int length = serverSocket.Receive(recByte,recByte.Length,0);</span><br><span class="line">string resStr = Encoding.Unicode.GetString(recByte, 0, length);</span><br><span class="line">Console.WriteLine(recStr);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="4-发送报文"><a href="#4-发送报文" class="headerlink" title="4.发送报文"></a>4.发送报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string sendStr = &quot;Hello,clent&quot;;</span><br><span class="line">byte[] sendByte = Encoding.Unicode.GetBytes(sendStr);</span><br><span class="line">serverSocket.send(sendByte,sendByte.Length,0);</span><br><span class="line">serverSocket.close();</span><br><span class="line">socket.close();</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><h3 id="1-和服务端第一步一样，创建IPAddress和IPEndpoint"><a href="#1-和服务端第一步一样，创建IPAddress和IPEndpoint" class="headerlink" title="1.和服务端第一步一样，创建IPAddress和IPEndpoint"></a>1.和服务端第一步一样，创建IPAddress和IPEndpoint</h3><pre><code>……
+</code></pre><h4 id="2-创建clientSocket，连接serverSocket"><a href="#2-创建clientSocket，连接serverSocket" class="headerlink" title="2.创建clientSocket，连接serverSocket"></a>2.创建clientSocket，连接serverSocket</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//创建一个新的Socket,这里我们使用最常用的基于TCP的Stream Socket（流式套接字）</span><br><span class="line">Socket clientSocket = new Socket(AddressFamuly.InterNetwork,SocketType.Stream,ProtocolType.TCP);</span><br><span class="line"></span><br><span class="line">//将该socket连接到主机上面的某个端口</span><br><span class="line">clientSocket.Connect(ipe);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-发送报文"><a href="#3-发送报文" class="headerlink" title="3.发送报文"></a>3.发送报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string sendStr = &quot;Hello,server&quot;;</span><br><span class="line">byte[] sendByte = Encoding.Unicode.GetBytes(sendStr);</span><br><span class="line">clientSocket.send(sendByte,sendByte.Length,0);</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="4-接收报文"><a href="#4-接收报文" class="headerlink" title="4.接收报文"></a>4.接收报文</h4><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">byte[] recByte = new byte[1000];</span><br><span class="line">int length = clientSocket.Receive(recByte,recByte.Length,0);</span><br><span class="line">string resStr = Encoding.Unicode.GetString(recByte, 0, length);</span><br><span class="line">Console.WriteLine(recStr);</span><br><span class="line">clientSocket.Close();</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+	<div>
+  
+</div>
+	
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://edwardlj.github.io/00.01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -449,6 +622,10 @@
 
     
 
+	<div>
+  
+</div>
+	
     <footer class="post-footer">
       
 
@@ -680,6 +857,10 @@
 
     
 
+	<div>
+  
+</div>
+	
     <footer class="post-footer">
       
 
@@ -841,6 +1022,10 @@
 
     
 
+	<div>
+  
+</div>
+	
     <footer class="post-footer">
       
 
@@ -1046,6 +1231,10 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
 
     
 
+	<div>
+  
+</div>
+	
     <footer class="post-footer">
       
 
@@ -1215,6 +1404,10 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
 
     
 
+	<div>
+  
+</div>
+	
     <footer class="post-footer">
       
 
@@ -1285,7 +1478,7 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1405,7 +1598,7 @@ u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg" alt="blockchain" title="区块链
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.0k</span>
+    <span title="Site words total count">4.4k</span>
   
 </div>
 
