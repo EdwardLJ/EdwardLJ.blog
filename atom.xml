@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://edwardlj.github.io/"/>
-  <updated>2018-10-24T09:03:13.355Z</updated>
+  <updated>2018-10-26T08:57:32.743Z</updated>
   <id>https://edwardlj.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WCF服务</title>
+    <link href="https://edwardlj.github.io/WCF%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://edwardlj.github.io/WCF服务/</id>
+    <published>2018-10-26T08:35:57.729Z</published>
+    <updated>2018-10-26T08:57:32.743Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="WCF服务"><a href="#WCF服务" class="headerlink" title="WCF服务"></a>WCF服务</h1><h2 id="1-创建一个接口，并给予ServiceContract协议"><a href="#1-创建一个接口，并给予ServiceContract协议" class="headerlink" title="1.创建一个接口，并给予ServiceContract协议"></a>1.创建一个接口，并给予ServiceContract协议</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[SerciveContract]</span><br><span class="line">public interface IWCFService</span><br><span class="line">&#123;</span><br><span class="line">[OperationContract]</span><br><span class="line">bool DoLogin(string username, string psswd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2-创建一个继承IWCFService的类WCFService"><a href="#2-创建一个继承IWCFService的类WCFService" class="headerlink" title="2.创建一个继承IWCFService的类WCFService"></a>2.创建一个继承IWCFService的类WCFService</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Single)]</span><br><span class="line">public class WCFService :IWCFService</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">public bool Dologin(string username, string psswd)</span><br><span class="line">&#123;</span><br><span class="line">//实现登录逻辑</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="3-定义宿主寄宿WCF服务"><a href="#3-定义宿主寄宿WCF服务" class="headerlink" title="3.定义宿主寄宿WCF服务"></a>3.定义宿主寄宿WCF服务</h2><p>寄宿方式分为4类：<br>1.”Self-Hosting” in a Managed Application（自托管宿主）<br>2.Managed Windows Services（Windows Services宿主）<br>3.Internet Information Services（IIS宿主）<br>4.Windows Process Activation Service（WAS宿主）</p><p>此例以第一种介绍：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">string uri = &quot;http://localhost:39005/WCFService&quot;;</span><br><span class="line">\\定义ServiceHost</span><br><span class="line">ServiceHost host = new ServiceHost(typeof(WCFService),new Uri(uri))；</span><br><span class="line"></span><br><span class="line">\\绑定参数</span><br><span class="line">BasicHttpBinding _basic = new BasicHttpBinding();</span><br><span class="line">_basic.MaxBufferPoolSize = int.MaxValue;</span><br><span class="line">_basic.MaxBufferSize = int.MaxValue;</span><br><span class="line">_basic.MaxReceivedMessageSize = int.MaxValue;</span><br><span class="line"></span><br><span class="line">\\行为参数</span><br><span class="line">System.Xml.XmlDictionaryReaderQuotas _readerQuotas = new XmlDictionaryReaderQuotas();</span><br><span class="line">_readerQuotas.MaxArrayLength = int.MaxValue;</span><br><span class="line">_readerQuotas.MaxBytesPerRead = int.MaxValue;</span><br><span class="line">_readerQuotas.MaxDepth = int.MaxValue;</span><br><span class="line">_readerQuotas.MaxNameTableCharCount = int.MaxValue;</span><br><span class="line">_readerQuotas.MaxStringContentLength = int.MaxValue;</span><br><span class="line">_basic.ReaderQuotas = _readerQuotas;</span><br><span class="line"></span><br><span class="line">\\开启服务</span><br><span class="line">host.AddServiceEndpoint(typeof(WCFService), _basic, uri);</span><br></pre></td></tr></table></figure></p><p><strong>通常的Windows App都是采用第二种寄主方式，可以随时开启和停止WCF服务</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;WCF服务&quot;&gt;&lt;a href=&quot;#WCF服务&quot; class=&quot;headerlink&quot; title=&quot;WCF服务&quot;&gt;&lt;/a&gt;WCF服务&lt;/h1&gt;&lt;h2 id=&quot;1-创建一个接口，并给予ServiceContract协议&quot;&gt;&lt;a href=&quot;#1-创建一个接口，并给予
+      
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://edwardlj.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Socket通讯</title>
