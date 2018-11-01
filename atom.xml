@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://edwardlj.github.io/"/>
-  <updated>2018-10-26T08:57:32.743Z</updated>
+  <updated>2018-11-01T02:49:36.122Z</updated>
   <id>https://edwardlj.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>essence</title>
+    <link href="https://edwardlj.github.io/essence/"/>
+    <id>https://edwardlj.github.io/essence/</id>
+    <published>2018-11-01T02:44:55.099Z</published>
+    <updated>2018-11-01T02:49:36.122Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>WCF服务</title>
