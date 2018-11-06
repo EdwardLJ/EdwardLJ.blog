@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="EdwardLJ个人站，主要涉及C#知识共享、IT干货、前沿技术等方面">
+<meta name="description" content="依赖：numpy,inv 说明：    inv: 矩阵求逆    dot: 矩阵点乘    mat: 二维矩阵    array: 一维数组    A.reshape(1,2),把A输出成1行2列的形式 上代码：123456789101112131415# inv: 矩阵求逆 dot: 矩阵点乘 mat: 二维矩阵 array: 一维数组#import numpy as npfrom numpy.">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="essence">
+<meta property="og:title" content="Python矩阵">
 <meta property="og:url" content="https://edwardlj.github.io/essence/index.html">
 <meta property="og:site_name" content="Edward.LJ">
-<meta property="og:description" content="EdwardLJ个人站，主要涉及C#知识共享、IT干货、前沿技术等方面">
+<meta property="og:description" content="依赖：numpy,inv 说明：    inv: 矩阵求逆    dot: 矩阵点乘    mat: 二维矩阵    array: 一维数组    A.reshape(1,2),把A输出成1行2列的形式 上代码：123456789101112131415# inv: 矩阵求逆 dot: 矩阵点乘 mat: 二维矩阵 array: 一维数组#import numpy as npfrom numpy.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-01T02:49:36.122Z">
+<meta property="og:image" content="https://edwardlj.github.io/images/juzhen.jpg">
+<meta property="og:updated_time" content="2018-11-06T08:22:38.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="essence">
-<meta name="twitter:description" content="EdwardLJ个人站，主要涉及C#知识共享、IT干货、前沿技术等方面">
+<meta name="twitter:title" content="Python矩阵">
+<meta name="twitter:description" content="依赖：numpy,inv 说明：    inv: 矩阵求逆    dot: 矩阵点乘    mat: 二维矩阵    array: 一维数组    A.reshape(1,2),把A输出成1行2列的形式 上代码：123456789101112131415# inv: 矩阵求逆 dot: 矩阵点乘 mat: 二维矩阵 array: 一维数组#import numpy as npfrom numpy.">
+<meta name="twitter:image" content="https://edwardlj.github.io/images/juzhen.jpg">
 
 
 
@@ -137,7 +140,7 @@
   </script>
 
 
-  <title>essence | Edward.LJ</title>
+  <title>Python矩阵 | Edward.LJ</title>
   
 
 
@@ -309,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">essence</h1>
+          <h1 class="post-title" itemprop="name headline">Python矩阵</h1>
         
 
         <div class="post-meta">
@@ -334,8 +337,8 @@
           
           <span class="post-updated">
             &nbsp; | &nbsp; Post modified
-            <time itemprop="dateUpdated" datetime="2018-11-01T10:49:36+08:00" content="2018-11-01">
-              2018-11-01
+            <time itemprop="dateUpdated" datetime="2018-11-06T16:22:38+08:00" content="2018-11-06">
+              2018-11-06
             </time>
           </span>
           
@@ -379,7 +382,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  144
                 </span>
               
 
@@ -416,7 +419,11 @@
       
 
       
-        
+        <p>依赖：numpy,inv</p>
+<p>说明：<br>    inv: 矩阵求逆<br>    dot: 矩阵点乘<br>    mat: 二维矩阵<br>    array: 一维数组<br>    A.reshape(1,2),把A输出成1行2列的形式</p>
+<p>上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># inv: 矩阵求逆 dot: 矩阵点乘 mat: 二维矩阵 array: 一维数组#</span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">from numpy.linalg import inv</span><br><span class="line"></span><br><span class="line">A = np.mat([1,1])</span><br><span class="line">print(&quot;A:\n&quot;,A)</span><br><span class="line">print(&quot;A.T:\n&quot;,A.T)  #A.T为A的转置</span><br><span class="line">print(&quot;A.reshape:\n&quot;,A.reshape(2,1)) </span><br><span class="line"></span><br><span class="line">B = np.mat([[1,2],[2,3]])</span><br><span class="line">print(&quot;B:\n&quot;,B)</span><br><span class="line">print(&quot;B的逆:\n&quot;, inv(B))</span><br><span class="line"></span><br><span class="line">print(&quot;A .* B &quot; , np.dot(B, A.T))</span><br></pre></td></tr></table></figure></p>
+<p>结果：<br><img src="/images/juzhen.jpg" alt=""></p>
+
       
     </div>
     
@@ -464,6 +471,12 @@
 </div>
 	
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
       
 
       
@@ -570,7 +583,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -677,7 +690,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.7k</span>
+    <span title="Site words total count">4.8k</span>
   
 </div>
 
