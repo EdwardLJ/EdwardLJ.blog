@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://edwardlj.github.io/"/>
-  <updated>2018-11-08T08:49:26.485Z</updated>
+  <updated>2018-11-09T02:57:07.578Z</updated>
   <id>https://edwardlj.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>itchat</title>
+    <link href="https://edwardlj.github.io/itchat/"/>
+    <id>https://edwardlj.github.io/itchat/</id>
+    <published>2018-11-09T02:03:56.575Z</published>
+    <updated>2018-11-09T02:57:07.578Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>键</strong></p><pre><code>&quot;FromUserName&quot;: &quot;&quot;,&quot;ToUserName&quot;: &quot;&quot;,&quot;Content&quot;: &quot;&quot;,&quot;StatusNotifyUserName&quot;: &quot;&quot;,&quot;ImgWidth&quot;: 0,&quot;PlayLength&quot;: 0,&quot;RecommendInfo&quot;: {},&quot;StatusNotifyCode&quot;: 0,&quot;NewMsgId&quot;: &quot;&quot;,&quot;Status&quot;: 0,&quot;VoiceLength&quot;: 0,&quot;ForwardFlag&quot;: 0,&quot;AppMsgType&quot;: 0,&quot;Ticket&quot;: &quot;&quot;,&quot;AppInfo&quot;: {},&quot;Url&quot;: &quot;&quot;,&quot;ImgStatus&quot;: 0,&quot;MsgType&quot;: 0,&quot;ImgHeight&quot;: 0,&quot;MediaId&quot;: &quot;&quot;,&quot;MsgId&quot;: &quot;&quot;,&quot;FileName&quot;: &quot;&quot;,&quot;HasProductId&quot;: 0,&quot;FileSize&quot;: &quot;&quot;,&quot;CreateTime&quot;: 0,&quot;SubMsgType&quot;: 0</code></pre><p><strong>send_msg</strong></p><pre><code>语法：send_msg(msg = &quot;Text&quot;, toUserName = &quot;XXX&quot;)参数：msg是要发送的文本，toUserName是发送对象, 如果留空, 将发送给自己，返回值为True或者False</code></pre><p><strong>send_file</strong></p><pre><code>语法：send_file(fileDir, toUserName=None)参数：fileDir是文件路径，返回值为True或者False</code></pre><p><strong>send_image</strong></p><pre><code>语法：send_image(fileDir, toUserName=None)参数：fileDir是文件路径，返回值为True或者False</code></pre><p><strong>send_video</strong></p><pre><code>语法：send_video(fileDir, toUserName=None) 参数：fileDir是文件路径，返回值为True或者False</code></pre><p><strong>回复消息</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import itchat</span><br><span class="line">from itchat.content import TEXT</span><br><span class="line"></span><br><span class="line">@itchat.msg_register(TEXT)   #这里的TEXT表示如果有人发送文本消息，那么就会调用下面的方法</span><br><span class="line">def text_reply(msg):</span><br><span class="line">itchat.send_msg(&apos;已经收到了文本消息，消息内容为%s&apos;%msg[&apos;Text&apos;],toUserName=msg[&apos;FromUserName&apos;])</span><br></pre></td></tr></table></figure></p><p>带对象参数注册, 对应消息对象将调用该方法，其中isFriendChat表示好友之间，isGroupChat表示群聊，isMapChat表示公众号</p><p>对于群消息中添加了三个键：<br>isAt 判断是否 @ 本号<br>ActualNickName : 实际 NickName(昵称)<br>Content : 实际 Content<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def text_reply(msg):</span><br><span class="line">if(msg.isAt):</span><br><span class="line">itchat.send_msg(&apos;已经收到来自&#123;0&#125;@我的消息,内容为：&#123;1&#125;&apos;.format(msg[&apos;ActualNickName&apos;],msg[&apos;Test&apos;]),toUserName = msg[&apos;FromUserName&apos;])</span><br></pre></td></tr></table></figure></p><p><strong>消息类型</strong></p><table><thead><tr><th>参数</th><th style="text-align:center">类型</th><th style="text-align:right">Text 键值</th></tr></thead><tbody><tr><td>TEXT</td><td style="text-align:center">文本</td><td style="text-align:right">文本内容(文字消息)</td></tr><tr><td>MAP</td><td style="text-align:center">地图</td><td style="text-align:right">位置文本(位置分享)</td></tr><tr><td>CARD</td><td style="text-align:center">名片</td><td style="text-align:right">推荐人字典(推荐人的名片)</td></tr><tr><td>SHARING</td><td style="text-align:center">分享</td><td style="text-align:right">分享名称(分享的音乐或者文章等)</td></tr><tr><td>PICTURE</td><td style="text-align:center">下载方法</td><td style="text-align:right">图片/表情</td></tr><tr><td>RECORDING</td><td style="text-align:center">语音</td><td style="text-align:right">下载方法</td></tr><tr><td>ATTACHMENT</td><td style="text-align:center">附件</td><td style="text-align:right">下载方法</td></tr><tr><td>VIDEO</td><td style="text-align:center">小视频</td><td style="text-align:right">下载方法</td></tr><tr><td>FRIENDS</td><td style="text-align:center">好友邀请</td><td style="text-align:right">添加好友所需参数</td></tr><tr><td>SYSTEM</td><td style="text-align:center">系统消息</td><td style="text-align:right">更新内容的用户或群聊的UserName组成的列表</td></tr><tr><td>NOTE</td><td style="text-align:center">通知</td><td style="text-align:right">通知文本(消息撤回等)</td></tr></tbody></table><p><strong>红包消息</strong></p><pre><code>MsgType: 49AppMsgType: 2001FromUserName: 发送方IDToUserName: 接收方IDContent: 未知</code></pre><p><strong><em>安利一波：<a href="https://chenjiabing666.github.io/" target="_blank" rel="noopener">https://chenjiabing666.github.io/</a></em></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;键&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;FromUserName&amp;quot;: &amp;quot;&amp;quot;,
+&amp;quot;ToUserName&amp;quot;: &amp;quot;&amp;quot;,
+&amp;quot;Content&amp;quot;: &amp;quo
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://edwardlj.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2018网易秋招</title>
     <link href="https://edwardlj.github.io/2018%E7%BD%91%E6%98%93%E7%A7%8B%E6%8B%9B/"/>
     <id>https://edwardlj.github.io/2018网易秋招/</id>
     <published>2018-11-08T08:43:54.837Z</published>
-    <updated>2018-11-08T08:49:26.485Z</updated>
+    <updated>2018-11-09T02:05:08.369Z</updated>
     
     <content type="html"><![CDATA[<h1 id="编程题-魔法币"><a href="#编程题-魔法币" class="headerlink" title="[编程题] 魔法币"></a>[编程题] 魔法币</h1><pre><code>小易准备去魔法王国采购魔法神器,购买魔法神器需要使用魔法币,但是小易现在一枚魔法币都没有,但是小易有两台魔法机器可以通过投入x(x可以为0)个魔法币产生更多的魔法币。魔法机器1:如果投入x个魔法币,魔法机器会将其变为2x+1个魔法币魔法机器2:如果投入x个魔法币,魔法机器会将其变为2x+2个魔法币小易采购魔法神器总共需要n个魔法币,所以小易只能通过两台魔法机器产生恰好n个魔法币,小易需要你帮他设计一个投入方案使他最后恰好拥有n个魔法币。 输入描述:输入包括一行,包括一个正整数n(1 ≤ n ≤ 10^9),表示小易需要的魔法币数量。输出描述:输出一个字符串,每个字符表示该次小易选取投入的魔法机器。其中只包含字符&apos;1&apos;和&apos;2&apos;。输入例子1:10输出例子1:122***上代码：***<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def sle(n):</span><br><span class="line">   if int(n) &lt; 1:</span><br><span class="line">       return &quot;&quot;</span><br><span class="line">   if int(n) % 2 == 0:</span><br><span class="line">       return sle((int(n) - 2) / 2) + &quot;2&quot;</span><br><span class="line">   else:</span><br><span class="line">       return sle((int(n) - 1) / 2) + &quot;1&quot;</span><br><span class="line">   </span><br><span class="line">n = input()</span><br><span class="line">str = sle(n)</span><br><span class="line">print(str)</span><br></pre></td></tr></table></figure></code></pre><h1 id="编程题-相反数"><a href="#编程题-相反数" class="headerlink" title="[编程题] 相反数"></a>[编程题] 相反数</h1><pre><code>为了得到一个数的&quot;相反数&quot;,我们将这个数的数字顺序颠倒,然后再加上原先的数得到&quot;相反数&quot;。例如,为了得到1325的&quot;相反数&quot;,首先我们将该数的数字顺序颠倒,我们得到5231,之后再加上原先的数,我们得到5231+1325=6556.如果颠倒之后的数字有前缀零,前缀零将会被忽略。例如n = 100, 颠倒之后是1. 输入描述:输入包括一个整数n,(1 ≤ n ≤ 10^5)输出描述:输出一个整数,表示n的相反数输入例子1:1325输出例子1:6556***上代码：***<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = input()</span><br><span class="line">b = a[::-1]</span><br><span class="line"></span><br><span class="line">print(int(b) + int(a))</span><br></pre></td></tr></table></figure></code></pre><h1 id="编程题-字符串碎片"><a href="#编程题-字符串碎片" class="headerlink" title="[编程题] 字符串碎片"></a>[编程题] 字符串碎片</h1><pre><code>一个由小写字母组成的字符串可以看成一些同一字母的最大碎片组成的。例如,&quot;aaabbaaac&quot;是由下面碎片组成的:&apos;aaa&apos;,&apos;bb&apos;,&apos;c&apos;。牛牛现在给定一个字符串,请你帮助计算这个字符串的所有碎片的平均长度是多少。输入描述:输入包括一个字符串s,字符串s的长度length(1 ≤ length ≤ 50),s只含小写字母(&apos;a&apos;-&apos;z&apos;)输出描述:输出一个整数,表示所有碎片的平均长度,四舍五入保留两位小数。如样例所示: s = &quot;aaabbaaac&quot;所有碎片的平均长度 = (3 + 2 + 3 + 1) / 4 = 2.25输入例子1:aaabbaaac输出例子1:2.25***上代码：***<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">str1 = input()</span><br><span class="line">count = 0</span><br><span class="line">num1 = 0</span><br><span class="line">it = re.finditer(r&apos;(.)\1*&apos;, str1)</span><br><span class="line">for node in it:</span><br><span class="line">    len_node = len(node.group())#注意这里的.group()</span><br><span class="line">    count+=len_node</span><br><span class="line">    num1 = num1 + 1</span><br><span class="line">print(&apos;%.2f&apos; % (count / num1))</span><br></pre></td></tr></table></figure></code></pre>]]></content>
     
@@ -35,7 +61,7 @@
     </summary>
     
     
-      <category term="算法，Python" scheme="https://edwardlj.github.io/tags/%E7%AE%97%E6%B3%95%EF%BC%8CPython/"/>
+      <category term="算法 Python" scheme="https://edwardlj.github.io/tags/%E7%AE%97%E6%B3%95-Python/"/>
     
   </entry>
   
