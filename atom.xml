@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://edwardlj.github.io/"/>
-  <updated>2019-01-04T02:52:07.806Z</updated>
+  <updated>2019-01-04T02:59:11.741Z</updated>
   <id>https://edwardlj.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://edwardlj.github.io/Blink/"/>
     <id>https://edwardlj.github.io/Blink/</id>
     <published>2019-01-04T02:11:45.216Z</published>
-    <updated>2019-01-04T02:52:07.806Z</updated>
+    <updated>2019-01-04T02:59:11.741Z</updated>
     
-    <content type="html"><![CDATA[<p>先推一下中哥的文章——阿里巴巴，果然开始拥有“预测未来”的能力了。 - 史中的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/53830162" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/53830162</a></p><h1 id="序言："><a href="#序言：" class="headerlink" title="序言："></a>序言：</h1><p>在这个文章里深深佩服阿里人对于“美感”的追求，面对新的技术的敏感、敢于攻坚的勇气，当蒋晓伟老湿傅构思出统一的“流失计算引擎”时，甚至能够想象得出那种发现新大陆的鸡冻的心情，太美好了。</p><p>梦想总是要有的，万一实现了呢。</p><p>追求新知识的脚步不能停止，现在极度匮乏概念，更别说攻坚了，当技术架构概念以及经验达到一个地步的时候，嗯，小伙子可以谈谈梦想了。</p><p>有点飘了，他们对于新技术的追求真正做到了“视为己出”，可以全部溢出地搭建Blink，这是我应该学到最为重要的地方。</p><p>Blink80%的架构已经在20%的时间完成，剩余的20%难点花了80%的时间去攻克，看到临近双十一了还在调优代码这一幕，莫名有点好笑又有点感动；倒计时5s出结果时，我想就和我的系统在客户上线安装的时候一样吧，都会向上天祈祷，哈哈。</p><p>“完美主义者”是真的牛逼，阿里人是真的爱完美。</p><h1 id="Flink"><a href="#Flink" class="headerlink" title="Flink"></a>Flink</h1><p>Flink是一款分布式的计算引擎，它可以用来做批处理，即处理静态的数据集、历史的数据集;也可以用来做流处理，即实时地处理一些实时数据流，实时地产生数据的结果;也可以用来做一些基于事件的应用。</p><h1 id="Blink"><a href="#Blink" class="headerlink" title="Blink"></a>Blink</h1><p>Blink——阿里巴巴计算引擎的王牌军。</p><h1 id="双十一滚动大屏幕后台的故事"><a href="#双十一滚动大屏幕后台的故事" class="headerlink" title="双十一滚动大屏幕后台的故事"></a>双十一滚动大屏幕后台的故事</h1><p>流式计算架构：</p><ol><li>数据采集：将来自各源头数据实时采集</li><li>中间存储：利用类Kafka Queue进行生产系统和消费系统解耦</li><li>实时计算：环节中最重要环节，订阅实时数据，通过计算规则对窗口中数据进行运算</li><li>结果存储：计算结果数据存入SQL和NoSQL</li><li>可视化：通过API调用结果数据进行展示</li></ol><p><img src="/images/Blink/Blink.jpg" alt=""></p><p>预知后事如何，请听下回分享……</p><p><strong><em>peace</em></strong></p>]]></content>
+    <content type="html"><![CDATA[<p>先推一下中哥的文章——阿里巴巴，果然开始拥有“预测未来”的能力了。 - 史中的文章 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/53830162" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/53830162</a></p><h1 id="序言："><a href="#序言：" class="headerlink" title="序言："></a>序言：</h1><p>在这个文章里深深佩服阿里人对于“美感”的追求，面对新的技术的敏感、敢于攻坚的勇气，当蒋晓伟老湿傅构思出统一的“流失计算引擎”时，甚至能够想象得出那种发现新大陆的鸡冻的心情，太美好了。</p><p>梦想总是要有的，万一实现了呢。</p><p>追求新知识的脚步不能停止，现在极度匮乏概念，更别说攻坚了，当技术架构概念以及经验达到一个地步的时候，嗯，小伙子可以谈谈梦想了。</p><p>有点飘了，他们对于新技术的追求真正做到了“视为己出”，可以全部溢出地搭建Blink，这是我应该学到最为重要的地方。</p><p>Blink80%的架构已经在20%的时间完成，剩余的20%难点花了80%的时间去攻克，看到临近双十一了还在调优代码这一幕，莫名有点好笑又有点感动；倒计时5s出结果时，我想就和我的系统在客户上线安装的时候一样吧，都会向上天祈祷，哈哈。</p><p>“完美主义者”是真的牛逼，阿里人是真的爱完美。</p><h1 id="Flink"><a href="#Flink" class="headerlink" title="Flink"></a>Flink</h1><p>Flink是一款分布式的计算引擎，它可以用来做批处理，即处理静态的数据集、历史的数据集;也可以用来做流处理，即实时地处理一些实时数据流，实时地产生数据的结果;也可以用来做一些基于事件的应用。</p><h1 id="Blink"><a href="#Blink" class="headerlink" title="Blink"></a>Blink</h1><p>Blink——阿里巴巴计算引擎的王牌军。</p><h1 id="双十一滚动大屏幕后台的故事"><a href="#双十一滚动大屏幕后台的故事" class="headerlink" title="双十一滚动大屏幕后台的故事"></a>双十一滚动大屏幕后台的故事</h1><p>流式计算架构：</p><ol><li>数据采集：将来自各源头数据实时采集</li><li>中间存储：利用类Kafka Queue进行生产系统和消费系统解耦</li><li>实时计算：环节中最重要环节，订阅实时数据，通过计算规则对窗口中数据进行运算</li><li>结果存储：计算结果数据存入SQL和NoSQL</li><li>可视化：通过API调用结果数据进行展示</li></ol><p><img src="/images/Blink/Blink.png" alt=""></p><p>预知后事如何，请听下回分享……</p><p><strong><em>peace</em></strong></p>]]></content>
     
     <summary type="html">
     
