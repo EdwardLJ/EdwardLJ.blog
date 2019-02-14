@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C#," />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="EdwardLJ个人站，主要涉及C#知识共享、IT干货、前沿技术等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Edward.LJ">
-<meta property="og:url" content="https://edwardlj.github.io/tags/算法-Python/index.html">
+<meta name="description" content="#前言#老板说要上欧洲做个Demo演示，让咱把机器换成欧洲的语言和时区，然后跑跑一年的数据； 行吧，干吧！ 随手选了个德国，然后准备好数据库和Demo,开始，写入数据库失败，what? amazing^^ #分析#  将插入数据库的错误语句打出来，一看，我尼玛，这咋Value比Column多呀 再次分析这个Value是个Decimal类型的，一跟发现不得了，小数点变成了逗号，难怪写入不了数据库 那">
+<meta name="keywords" content="C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语言环境的Decimal采坑">
+<meta property="og:url" content="https://edwardlj.github.io/语言环境的Decimal采坑/index.html">
 <meta property="og:site_name" content="Edward.LJ">
-<meta property="og:description" content="EdwardLJ个人站，主要涉及C#知识共享、IT干货、前沿技术等方面">
+<meta property="og:description" content="#前言#老板说要上欧洲做个Demo演示，让咱把机器换成欧洲的语言和时区，然后跑跑一年的数据； 行吧，干吧！ 随手选了个德国，然后准备好数据库和Demo,开始，写入数据库失败，what? amazing^^ #分析#  将插入数据库的错误语句打出来，一看，我尼玛，这咋Value比Column多呀 再次分析这个Value是个Decimal类型的，一跟发现不得了，小数点变成了逗号，难怪写入不了数据库 那">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-14T04:06:02.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edward.LJ">
-<meta name="twitter:description" content="EdwardLJ个人站，主要涉及C#知识共享、IT干货、前沿技术等方面">
+<meta name="twitter:title" content="语言环境的Decimal采坑">
+<meta name="twitter:description" content="#前言#老板说要上欧洲做个Demo演示，让咱把机器换成欧洲的语言和时区，然后跑跑一年的数据； 行吧，干吧！ 随手选了个德国，然后准备好数据库和Demo,开始，写入数据库失败，what? amazing^^ #分析#  将插入数据库的错误语句打出来，一看，我尼玛，这咋Value比Column多呀 再次分析这个Value是个Decimal类型的，一跟发现不得了，小数点变成了逗号，难怪写入不了数据库 那">
 
 
 
@@ -120,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://edwardlj.github.io/tags/算法-Python/"/>
+  <link rel="canonical" href="https://edwardlj.github.io/语言环境的Decimal采坑/"/>
 
 
 
@@ -136,7 +138,7 @@
   </script>
 
 
-  <title>Tag: 算法 Python | Edward.LJ</title>
+  <title>语言环境的Decimal采坑 | Edward.LJ</title>
   
 
 
@@ -164,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,54 +280,250 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>算法 Python<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://edwardlj.github.io/语言环境的Decimal采坑/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Edward.LJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Edward.LJ">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018网易秋招/" itemprop="url">
-              
-                <span itemprop="name">2018网易秋招</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">语言环境的Decimal采坑</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-08T16:43:54+08:00"
-              content="2018-11-08" >
-          11-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-14T11:35:34+08:00">
+                2019-02-14
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+          <span class="post-updated">
+            &nbsp; | &nbsp; Post modified
+            <time itemprop="dateUpdated" datetime="2019-02-14T12:06:02+08:00" content="2019-02-14">
+              2019-02-14
+            </time>
+          </span>
+          
+
+
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  511
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#前言#<br>老板说要上欧洲做个Demo演示，让咱把机器换成欧洲的语言和时区，然后跑跑一年的数据；</p>
+<p>行吧，干吧！</p>
+<p>随手选了个德国，然后准备好数据库和Demo,开始，写入数据库失败，what? amazing^^</p>
+<p>#分析#</p>
+<ol>
+<li>将插入数据库的错误语句打出来，一看，我尼玛，这咋Value比Column多呀</li>
+<li>再次分析这个Value是个Decimal类型的，一跟发现不得了，小数点变成了逗号，难怪写入不了数据库</li>
+<li>那么问题来了，为什么本该是点的变成了逗号呢？</li>
+</ol>
+<p><strong>区别就在于语言环境有关系</strong></p>
+<p>#解决方案#</p>
+<ol>
+<li>在Cntrol→Clock,language,and Region→Change loaction→Formats的Additional setting中的Decimal symbol缺省值为‘，’，将之改为‘.’即可</li>
+<li><p>将格式化之后的结果进行替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DecimalFormat df = new DecimalFormat(&quot;0.00&quot;);</span><br><span class="line">return df.format(value).replace(&quot;,&quot;, &quot;.&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特别声明小数点分隔符为”.”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DecimalFormat df = new DecimalFormat(&quot;0.00&quot;);</span><br><span class="line">DecimalFormatSymbols symbols = new DecimalFormatSymbols();</span><br><span class="line">symbols.setDecimalSeparator(&apos;.&apos;);</span><br><span class="line">df.setDecimalFormatSymbols(symbols);</span><br><span class="line">return df.format(value);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>解决起来其实不难，但是在完全没踩过这个坑的情况下，完全一脸懵逼，一度怀疑是不是德国计算都没得小数点呀，难道他们用逗号算算术的？amazing</p>
+<p>#语言环境之数据库采坑#<br>在上面的准备数据没有问题后，又踩到了一个新坑——数据库。<br>虽然数据库的缺省语言换成了British English，但是发现sa的用户的缺省语言依然是English，这就造成了当连接User为sa时，在插入时间字段时会报Error“The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.”.<br>解决方法就是将sa的缺省语言该为与系统一致。</p>
+<p>其实最保险的方式应该先更改语言与时区，然后更改数据库的缺省语言，创建一个改语言环境下的用户，用该用户作为连接，创建新的数据库，然后启动Server，运行Demo。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/codemokey32x32.png" alt="Edward.LJ WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+	
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/PDFToTXT/" rel="next" title="PDFToTXT">
+                <i class="fa fa-chevron-left"></i> PDFToTXT
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -333,6 +531,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTQ2OS8xODAxNg=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -634,6 +841,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -662,6 +873,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
